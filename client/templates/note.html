@@ -1,0 +1,20 @@
+<ion-view title="{{note.data.title}}">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear"></button>
+  </ion-nav-buttons>
+  
+  <ion-content class="chat">
+      <div>
+          <div>
+              <input type="text" ng-model="note.data.title" dir="auto"/>
+           
+          </div>
+          <div>
+              <input type="text" ng-model="note.data.note" dir="auto"/>
+          </div>
+          <div>
+              <button ng-click="note.save()"> Save </button>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
