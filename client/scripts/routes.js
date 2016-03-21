@@ -26,6 +26,15 @@ function config($stateProvider, $urlRouterProvider) {
                     controller: 'NoteCtrl as note'
                 }
             }
+        })
+        .state('tab.newNote', {
+            url: '/note',
+            views: {
+                'tab-notes': {
+                    templateUrl: 'client/templates/note.html',
+                    controller: 'NoteCtrl as note'
+                }
+            }
         });
 
     $urlRouterProvider.otherwise('tab/notes');

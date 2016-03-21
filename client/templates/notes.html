@@ -1,4 +1,5 @@
 <ion-view view-title="Notes">
+ 
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="note in notes.data | orderBy:'-lastUpdatedtime'" class="item-chat item-note1 item-remove-animate item-avatar item-icon-right"
@@ -16,4 +17,10 @@
             </ion-item>
         </ion-list>
     </ion-content>
+    <ion-footer-bar align-title="left" class="bar-positive">
+        <label class="item item-input item-block input-block" style="width: 100%;">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Search for Notes Title">
+        </label>
+    </ion-footer-bar>
 </ion-view>

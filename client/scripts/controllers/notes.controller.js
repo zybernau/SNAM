@@ -7,7 +7,6 @@ function NotesCtrl($scope, $reactive) {
     
     this.remove = remove;
     this.copy = copy;
-    
     this.helpers({
         data() {
             return Notes.find();

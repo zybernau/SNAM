@@ -16,7 +16,7 @@ console.log(noteId);
     });
     
     function save() {
-        // update note.
+        // update note. Call server update.
         console.log(Notes[noteId]);
     }
 }
