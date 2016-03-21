@@ -20,7 +20,7 @@
     <ion-footer-bar align-title="left" class="bar-positive">
         <label class="item item-input item-block input-block" style="width: 100%;">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="search" placeholder="Search for Notes Title">
+            <input type="search" ng-change="notes.search()" ng-model="notes.ssg" placeholder="Search for Notes Title">
         </label>
     </ion-footer-bar>
 </ion-view>
