@@ -3,19 +3,19 @@
     <ion-content class="chat">
         <div>
             <label class="item item-input">
-                <input type="text" ng-model="note.data.title">
+                <input type="text" placeholder="Title" ng-model="note.data.title">
             </label>
             <label class="item item-input">
-                <textarea ng-model="note.data.note"> </textarea>
+                <textarea  placeholder="Notes" ng-model="note.data.note"> </textarea>
             </label>
         </div>
     </ion-content>
 
-    <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <ion-footer-bar keyboard-attach class="bar-stable">
         
         <span ng-if="note.data.note.length > 0">
-            <button side="left" class="button button-clear button-positive">Clear</button>
-            <button side="right" ng-click="note.save()" class="button button-clear button-positive">Save</button>
+            <button ng-click="note.clear()" class="button button-positive"  >Clear</button>
+            <button ng-click="note.save()" class="button button-positive" >Save</button>
         </span>
 
     </ion-footer-bar>

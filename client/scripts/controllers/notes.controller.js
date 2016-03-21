@@ -14,10 +14,14 @@ function NotesCtrl($scope, $reactive) {
     });
     /// methods
     function remove(note) {
-        this.data.remove(note);
+        //this.data.remove(note);
+         Meteor.call('deleteNote', note._id, savedSuccess);
     }
     
     function copy(note) {
         // write logic for copying to clipboard.
+    }
+    function savedSuccess(e) {
+        console.log(e);
     }
 }
