@@ -6,8 +6,7 @@ function NotesCtrl($scope, $reactive) {
     $reactive(this).attach($scope);
 
     this.remove = remove;
-    this.copy = copy;
-    this.search = search;
+    this.copy = copy;  
     this.ssg = "";
     this.helpers({
         data() {
@@ -34,9 +33,5 @@ function NotesCtrl($scope, $reactive) {
         console.log(e);
     }
 
-    function search() {
-        if (this.ssg.toString().length > 1) {
-            // Meteor.call('searchbyTitle', this.ssg);    
-        }
-    }
+  
 }
