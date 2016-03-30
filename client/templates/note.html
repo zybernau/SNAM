@@ -8,12 +8,16 @@
             <label class="item item-input">
                 <textarea  placeholder="Notes" ng-model="note.data.note"> </textarea>
             </label>
+            <div class="picture">
+              <img ng-src="{{note.picture}}">
+            </div>
         </div>
     </ion-content>
 
     <ion-footer-bar keyboard-attach class="bar-stable">
         
         <span ng-if="note.data.note.length > 0">
+            <button ng-click="note.sendPicture()" class="button button-clear button-icon button-positive icon ion-ios-camera-outline"></button>
             <button ng-click="note.clear()" class="button button-positive"  >Clear</button>
             <button ng-click="note.save()" class="button button-positive" >Save</button>
         </span>

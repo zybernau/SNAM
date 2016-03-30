@@ -1,0 +1,18 @@
+<ion-view title="Your phone number">
+  <ion-nav-buttons side="right">
+    <button ng-click="logger.login()" ng-disabled="!logger.phone || logger.phone.length === 0" class="button button-clear button-positive">Done</button>
+  </ion-nav-buttons>
+  <ion-content class="login">
+    <div class="text-center instructions">
+        If you have already registered, Please give your phone and passcode to login. New user? Please enter your phone number with country code. (e.g. +919876543210)
+    </div>
+    <div class="list">
+      <label class="item item-input">
+        <input ng-model="logger.phone" type="text" placeholder="Your phone number">
+      </label>
+      <label class="item item-input">
+        <input ng-model="logger.passcode" on-return="logger.login()" type="password" placeholder="Pass code">
+      </label>
+    </div>
+  </ion-content>
+</ion-view>

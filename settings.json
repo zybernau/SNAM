@@ -1,0 +1,12 @@
+{
+  "TWILIO": {
+    "FROM": "+13367777252",
+    "SID": "ACdf169b02dc05bdcdf768fff2fc16615f",
+    "TOKEN": "7e2d7bbe28517ec16e18c3c9a1f4ef18"
+  },
+  "ACCOUNTS_PHONE": {
+     "PHONE_FROM" :  "+13367777252",
+    "ADMIN_NUMBERS": ["+13367777252"],
+    "MASTER_CODE": "1234"
+  }
+}
