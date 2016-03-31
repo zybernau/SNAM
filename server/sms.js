@@ -1,10 +1,10 @@
 // Add in order to use with a real twilio account
 SMS.twilio = {
-  ACCOUNT_SID: Meteor.settings.TWILIO.SID,
-  AUTH_TOKEN: Meteor.settings.TWILIO.TOKEN
+  ACCOUNT_SID: "ACdf169b02dc05bdcdf768fff2fc16615f",
+  AUTH_TOKEN: "7e2d7bbe28517ec16e18c3c9a1f4ef18"
 };
  SMS.phoneTemplates = {
-    from: Meteor.settings.ACCOUNTS_PHONE.PHONE_FROM,
+    from: "+13367777252",
     text: function (user, code) {
         return 'the code is: ' + code;
     }
@@ -12,7 +12,7 @@ SMS.twilio = {
   
 if (Meteor.isServer) {
   if (Meteor.settings && Meteor.settings.ACCOUNTS_PHONE) {
-    Accounts._options.adminPhoneNumbers = Meteor.settings.ACCOUNTS_PHONE.ADMIN_NUMBERS;
-    Accounts._options.phoneVerificationMasterCode = Meteor.settings.ACCOUNTS_PHONE.MASTER_CODE;
+    Accounts._options.adminPhoneNumbers = ["+13367777252"];
+    Accounts._options.phoneVerificationMasterCode = "1234";
   }
 }
