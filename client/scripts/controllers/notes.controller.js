@@ -12,14 +12,6 @@ function NotesCtrl($scope, $reactive) {
 
     this.helpers({
         data() {
-            // Meteor.call('searchbyTitle', this.getReactively('ssg'), function(data, err) {
-            //     return data;
-            // });
-            // return data1; 
-            // Meteor.call('searchbyTitle', this.getReactively('ssg'), (err, ret) => {
-            //     return ret;
-            // });
-            var clipboard = new Clipboard('.copier');
             if (this.getReactively('ssg') == "")
                 return Notes.find({ userId: Meteor.user()._id });
             else

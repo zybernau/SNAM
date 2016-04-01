@@ -16,8 +16,8 @@ Accounts.registerLoginHandler(function(loginRequest) {
             user = Meteor.users.findOne(
                 { $or: [ { 'phone.number': loginRequest.phone },    
                          { 'profile.name': loginRequest.phone }
-                 ] , 'phone.verified': true, 
-                      'profile.code': loginRequest.code}
+                        ] , 'phone.verified': true, 
+                            'profile.code': loginRequest.code}
                 );
             if (!user || !user._id) {
                 return {
