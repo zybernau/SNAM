@@ -14,7 +14,6 @@ function NoteCtrl($scope, $reactive, $stateParams, $state, $timeout, $ionicPopup
 
     this.helpers({
         data() {
-            console.log(noteId);
             if (noteId)
                 return Notes.findOne({ _id: noteId });
             else
