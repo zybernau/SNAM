@@ -11,9 +11,14 @@ Accounts.registerLoginHandler(function(loginRequest) {
     }
     user = {};
     userId = "";
-    if (Meteor.users.find({ 'phone.number': loginRequest.phone, 'phone.verified': true }).count() === 1) {
+    
         if (loginRequest.code || loginRequest.code.length > 0) {
-            user = Meteor.users.findOne({ 'phone.number': loginRequest.phone, 'phone.verified': true, 'profile.code': loginRequest.code });
+            user = Meteor.users.findOne(
+                { $or: [ { 'phone.number': loginRequest.phone },    
+                         { 'profile.name': loginRequest.phone }
+                 ] , 'phone.verified': true, 
+                      'profile.code': loginRequest.code}
+                );
             if (!user || !user._id) {
                 return {
                     error: "Authentication Failed, Please try again later."
@@ -21,7 +26,12 @@ Accounts.registerLoginHandler(function(loginRequest) {
             }
 
         }
-    }
+        else {
+             return {
+                    error: "Authentication Failed, Please try again later."
+                };
+        }
+    
     userId = user._id;
     //send loggedin user's user id
     //creating the token and adding to the user

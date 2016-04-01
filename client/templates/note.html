@@ -8,8 +8,8 @@
             <label class="item item-input">
                 <textarea  placeholder="Notes" ng-model="note.data.note"> </textarea>
             </label>
-            <div class="picture">
-              <img ng-src="{{note.picture}}">
+            <div class="picture" ng-show="note.data.picture">
+              <img ng-src="{{note.data.picture}}">
             </div>
         </div>
     </ion-content>

@@ -61,6 +61,7 @@ function NoteCtrl($scope, $reactive, $stateParams, $state, $timeout, $ionicPopup
         if (this.data) {
             this.data.title = "";
             this.data.note = "";
+            this.data.picture = "";
         }
     }
     function savedSuccess(e, cnt) {

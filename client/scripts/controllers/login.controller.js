@@ -42,7 +42,7 @@ function LoginCtrl($scope, $reactive, $state, $ionicLoading, $ionicPopup, $log) 
     }
     function registerNewUser() {
         let confirmPopup = $ionicPopup.confirm({
-            title: 'Number confirmation',
+            title: 'Register New User. Number confirmation',
             template: '<div>' + this.phone + '</div><div>Is your phone number above correct?</div>',
             cssClass: 'text-center',
             okText: 'Yes',
