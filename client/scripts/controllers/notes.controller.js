@@ -11,7 +11,7 @@ function NotesCtrl($scope, $reactive) {
     this.subscribe('notes');
 
     this.helpers({
-        data() {
+        data: () => {
             console.log("getting the data. refreshed.");
             if (this.getReactively('ssg') == "")
                 return Notes.find({ userId: Meteor.user()._id });
