@@ -10,6 +10,7 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log) {
  let code = user && user.profile ? user.profile.code : ''
   this.name = name;
   this.updateName = updateName;
+  this.logout = logout;
   this.passcode = code;
  this.subscribe('users');
   ////////////
@@ -23,6 +24,11 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log) {
     });
   }
  
+ function logout () {
+     Meteor.logout((err) => {
+      $state.go('login');
+    });
+ }
   function handleError (err) {
     $log.error('profile save error ', err);
  

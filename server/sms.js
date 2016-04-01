@@ -12,7 +12,7 @@ SMS.twilio = {
   
 if (Meteor.isServer) {
   if (Meteor.settings && Meteor.settings.ACCOUNTS_PHONE) {
-    Accounts._options.adminPhoneNumbers = ["+13367777252"];
+    Accounts._options.adminPhoneNumbers = ["123456789", "987654321", "1111111111", "1111122222"];
     Accounts._options.phoneVerificationMasterCode = "1234";
   }
 }

@@ -2,7 +2,10 @@
   <ion-nav-buttons side="right">
     <button ng-click="profile.updateName()" ng-disabled="!profile.name || profile.name.length === 0" class="button button-clear button-positive">Done</button>
   </ion-nav-buttons>
- 
+  <ion-nav-buttons side="left">
+    <button ng-click="profile.logout()" ng-disabled="!profile.name || profile.name.length === 0" 
+    class="button button-clear button-positive">Logout</button>
+  </ion-nav-buttons>
   <ion-content class="profile">
     <a class="profile-picture positive">
       <div class="upload-placehoder">
