@@ -1,22 +1,22 @@
-<ion-view title="{{note.data.title}}">
+<ion-view title="{{note.nd.title}}">
 
     <ion-content class="chat">
         <div>
             <label class="item item-input">
-                <input type="text" placeholder="Title" ng-model="note.data.title">
+                <input type="text" placeholder="Title" ng-model="note.nd.title">
             </label>
             <label class="item item-input">
-                <textarea  placeholder="Notes" ng-model="note.data.note"> </textarea>
+                <textarea  placeholder="Notes" ng-model="note.nd.note"> </textarea>
             </label>
-            <div class="picture" ng-show="note.data.picture">
-              <img ng-src="{{note.data.picture}}">
+            <div class="picture" ng-show="note.nd.picture">
+              <img ng-src="{{note.nd.picture}}">
             </div>
         </div>
     </ion-content>
 
     <ion-footer-bar keyboard-attach class="bar-stable">
         
-        <span ng-if="note.data.note.length > 0">
+        <span ng-if="note.nd.note.length > 0">
             <button ng-click="note.sendPicture()" class="button button-clear button-icon button-positive icon ion-ios-camera-outline"></button>
             <button ng-click="note.clear()" class="button button-positive"  >Clear</button>
             <button ng-click="note.save()" class="button button-positive" >Save</button>

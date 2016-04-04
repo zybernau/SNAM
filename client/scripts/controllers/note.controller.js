@@ -13,24 +13,19 @@ function NoteCtrl($scope, $reactive, $stateParams, $state, $timeout, $ionicPopup
 
 
     this.helpers({
-        data() {
-            if (noteId)
-                return Notes.findOne({ _id: noteId });
-            else
-                this.clear();
-        }
+        nd: () => Notes.findOne({ _id: noteId })
     });
 
     function save() {
         // update note. Call server update.
         if (noteId != undefined) {
 
-            Meteor.call('updateNote', noteId, this.data, (err, ret) => {
+            Meteor.call('updateNote', noteId, this.nd, (err, ret) => {
                 if (err) return handleError(err);
             });
         } else {
 
-            Meteor.call('newNote', this.data, (err, ret) => {
+            Meteor.call('newNote', this.nd, (err, ret) => {
                 if (err) return handleError(err);
             });
         }
@@ -39,28 +34,28 @@ function NoteCtrl($scope, $reactive, $stateParams, $state, $timeout, $ionicPopup
         //console.log(Notes[this.noteId]);
     }
     function sendPicture() {
-        MeteorCameraUI.getPicture({}, (err, data) => {
+        MeteorCameraUI.getPicture({}, (err, nd) => {
             if (err && err.error == 'cancel') return;
             if (err) return handleError(err);
-            this.data.picture = data;
+            this.nd.picture = nd;
             if (noteId != undefined) {
                 
-                Meteor.call('updateNote', noteId, this.data, (err, ret) => {
+                Meteor.call('updateNote', noteId, this.nd, (err, ret) => {
                     if (err) return handleError(err);
                 });
             } else {
 
-                Meteor.call('newNote', this.data, (err, ret) => {
+                Meteor.call('newNote', this.nd, (err, ret) => {
                     if (err) return handleError(err);
                 });
             }
         });
     }
     function clear() {
-        if (this.data) {
-            this.data.title = "";
-            this.data.note = "";
-            this.data.picture = "";
+        if (this.nd) {
+            this.nd.title = "";
+            this.nd.note = "";
+            this.nd.picture = "";
         }
     }
     function savedSuccess(e, cnt) {
