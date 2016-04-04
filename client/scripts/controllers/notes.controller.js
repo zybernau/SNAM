@@ -12,11 +12,13 @@ function NotesCtrl($scope, $reactive) {
 
     this.helpers({
         data: () => {
-            console.log("getting the data. refreshed.");
+            console.log("getting the data. refreshed. data=_|"  + this.getReactively('ssg')+ "|_" );
             if (this.getReactively('ssg') == "")
                 return Notes.find({ userId: Meteor.user()._id });
             else
                 return Notes.find({ userId: Meteor.user()._id, title: new RegExp('^.*' + this.getReactively('ssg') + '.*$', "i") });
+                
+            //console.log("Not Reached. here. Check out.. " + this.getReactively('ssg') );
         }
     });
     /// methods
