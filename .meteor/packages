@@ -19,7 +19,9 @@ momentjs:moment
 fourseven:scss
 jasonaibrahim:angular-moment
 check
-okland:accounts-phone
 okland:camera-ui
 standard-minifier-css
 standard-minifier-js
+accounts-password
+accounts-ui
+accounts-google

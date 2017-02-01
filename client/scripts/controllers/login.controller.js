@@ -42,8 +42,8 @@ function LoginCtrl($scope, $reactive, $state, $ionicLoading, $ionicPopup, $log) 
     }
     function registerNewUser() {
         let confirmPopup = $ionicPopup.confirm({
-            title: 'Register New User. Number confirmation',
-            template: '<div>' + this.phone + '</div><div>Is your phone number above correct?</div>',
+            title: 'Register New User, confirmation',
+            template: '<div>' + this.phone + '</div><div>?</div>',
             cssClass: 'text-center',
             okText: 'Yes',
             okType: 'button-positive button-clear',
@@ -55,7 +55,7 @@ function LoginCtrl($scope, $reactive, $state, $ionicLoading, $ionicPopup, $log) 
             if (!res) return;
 
             $ionicLoading.show({
-                template: 'Sending verification code...'
+                template: 'Logging in...'
             });
 
             Accounts.requestPhoneVerification(this.phone, (err) => {

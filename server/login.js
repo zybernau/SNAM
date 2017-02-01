@@ -14,15 +14,23 @@ Accounts.registerLoginHandler(function(loginRequest) {
     
         if (loginRequest.code || loginRequest.code.length > 0) {
             user = Meteor.users.findOne(
-                { $or: [ { 'phone.number': loginRequest.phone },    
-                         { 'profile.name': loginRequest.phone }
-                        ] , 'phone.verified': true, 
-                            'profile.code': loginRequest.code}
+                { $or: [ { 'uname': loginRequest.phone },    
+                         { 'uname': loginRequest.phone }
+                        ] , 'ucode': loginRequest.code}
                 );
             if (!user || !user._id) {
-                return {
-                    error: "Authentication Failed, Please try again later."
-                };
+                // return {
+                //     error: "Authentication Failed, Please try again later."
+                // };
+                // insert a new user
+                Meteor.users.insert({'uname':loginRequest.phone, 
+                        'ucode': loginRequest.code});
+                
+                user = Meteor.users.findOne(
+                { $or: [ { 'uname': loginRequest.phone },    
+                         { 'uname': loginRequest.phone }
+                        ] , 'ucode': loginRequest.code}
+                );
             }
 
         }

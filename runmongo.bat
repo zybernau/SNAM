@@ -1,0 +1,1 @@
+export MONGO_URL=mongodb://secnotesdbusr:qazwsx123@ds023108.mlab.com:23108/securenotes
